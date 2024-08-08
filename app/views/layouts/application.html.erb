@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <% unless controller_name == "sessions" %>
+    <% unless controller_name == "sessions" || controller_name == "users" %>
       <%= render "layouts/header" %>
     <% end %>
     <%= yield %>
