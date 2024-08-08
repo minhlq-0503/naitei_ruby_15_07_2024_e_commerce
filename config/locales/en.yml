@@ -17,10 +17,18 @@ en:
     new:
       title: "Log in"
       login: "Log in"
-      register_now: "No account yet? Register now!"
+      no_account?: "No account yet? "
+      register_now: "Register now!"
       remember_me: "Remember me"
-      or: "or"
-      home_without_login: "Use our page without signing in!"
+      language: "Language"
+      english: "English"
+      vietnamese: "Vietnamese"
+  users:
+    new:
+      title: "Sign up"
+      signup: "Sign up"
+      already_have_account?: "Already have an account? "
+      login_now: "Login now!"
       language: "Language"
       english: "English"
       vietnamese: "Vietnamese"
@@ -36,5 +44,10 @@ en:
       log_out: "Log out"
       log_in: "Log in"
       sign_up: "Sign up"
+  shared:
+    access_without_login:
+      or: "or"
+      home_without_login: "Use our page without signing in!"
   flash:
     invalid_email_password_combination: "Invalid email and password combination. Please try again."
+    success_signup: "Created account successfully"
