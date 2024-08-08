@@ -13,11 +13,13 @@ module ApplicationHelper
   end
 
   def skip_header?
-    action_name == "new" || controller_name == "sessions"
+    action_name.to_sym == :new ||
+      controller_name.to_sym == :users && action_name.to_sym == :create
   end
 
   def skip_container?
-    action_name == "new" || controller_name == "sessions"
+    action_name.to_sym == :new ||
+      controller_name.to_sym == :users && action_name.to_sym == :create
   end
 
   def format_currency amount

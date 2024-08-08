@@ -6,12 +6,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = t "flash.success_signup"
-      reset_session
-      log_in @user
-      redirect_to root_path
+      success_signup
     else
-      render :new, status: :unprocessable_entity
+      fail_signup
     end
   end
 
@@ -19,5 +16,16 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit User::ACCOUNT_PARAMS
+  end
+
+  def success_signup
+    @user.send_activation_email
+    flash[:info] = t "flash.check_email_activation"
+    redirect_to login_path, status: :see_other
+  end
+
+  def fail_signup
+    flash[:warning] = t "flash.sign_up_fail"
+    render :new, status: :unprocessable_entity
   end
 end

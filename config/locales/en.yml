@@ -53,10 +53,6 @@ en:
       login_now?: "You need to login to use this feature. Login now?"
       maybe_later: "Maybe later"
       login_now: "Login now"
-  flash:
-    invalid_email_password_combination: "Invalid email and password combination. Please try again."
-    success_signup: "Created account successfully"
-    not_found_product: "Product not found!"
   carts:
     cart_header:
       product: "Product"
@@ -151,3 +147,20 @@ en:
       place_label: "Address"
       default_label: "Default"
       add_button: "Add Address"
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
+      greetings: "Hi %{name},"
+      welcome: "Welcome to the Sample App! Click on the link below to activate your account:"
+      activate: "Activate"
+  flash:
+    invalid_email_password_combination: "Invalid email and password combination. Please try again."
+    success_signup: "Created account successfully"
+    check_email_activation: "Please check your email to activate your account."
+    success_activate: "Account activated!"
+    fail_activate: "Invalid activation link"
+    not_activated: "Account not activated. Check your email for the activation link."
+    invalid_email_password_combination: "Invalid email and password combination. Please try again."
+    success_signup: "Created account successfully"
+    not_found_product: "Product not found!"
+    sign_up_fail: "Sign up fail! Please try again"

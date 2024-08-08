@@ -6,7 +6,8 @@ admin_user = User.create!(email: "admin@email.com",
              user_name: "Admin",
              password: "adminaccount",
              role: :admin,
-             phone: "0987654322")
+             phone: "0987654322",
+             activated: true)
 
 admin_user.image.attach(
   io: URI.open("https://picsum.photos/200/200?random=1"),
@@ -21,7 +22,9 @@ users = 15.times.map do
     email: Faker::Internet.email,
     password: "password",
     phone: "0987654321",
-    created_at: DateTime.now
+    created_at: DateTime.now,
+    activated: true,
+    activated_at: Time.zone.now
   )
 
   user.image.attach(

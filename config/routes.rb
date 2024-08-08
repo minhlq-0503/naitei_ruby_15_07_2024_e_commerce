@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get "/cart", to: "carts#index", as: "cart_index"
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
+    get "orders/order_info"
+    post "orders", to: "orders#create"
     resources :users, only: %i(new create show)
     resources :products do
       collection do
@@ -24,5 +26,6 @@ Rails.application.routes.draw do
     get "orders/order_info"
     post "orders", to: "orders#create"
     resources :orders, only: %i(show index)
+    resources :account_activations, only: :edit
   end
 end
