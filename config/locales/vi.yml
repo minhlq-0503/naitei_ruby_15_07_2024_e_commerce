@@ -51,6 +51,8 @@ vi:
       home_without_login: "Truy cập trang web không cần đăng nhập!"
   flash:
     invalid_email_password_combination: "Email hoặc mật khẩu sai. Hãy thử lại."
+    success_signup: "Tạo tài khoản thành công"
+    not_found_product: "Không tìm thấy sản phẩm!"
   carts:
     cart_header:
       product: "Sản phẩm"
@@ -64,4 +66,3 @@ vi:
       product_count: "sản phẩm"
       buy: "MUA"
     empty_cart: "Không có sản phẩm trong giỏ hàng"
-    success_signup: "Tạo tài khoản thành công"

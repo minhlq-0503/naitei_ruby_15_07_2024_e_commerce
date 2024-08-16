@@ -51,6 +51,8 @@ en:
       home_without_login: "Use our page without signing in!"
   flash:
     invalid_email_password_combination: "Invalid email and password combination. Please try again."
+    success_signup: "Created account successfully"
+    not_found_product: "Product not found!"
   carts:
     cart_header:
       product: "Product"
@@ -64,4 +66,3 @@ en:
       product_count: "products"
       buy: "BUY"
     empty_cart: "No product in cart"
-    success_signup: "Created account successfully"
