@@ -6,10 +6,11 @@ Rails.application.routes.draw do
     root "static_pages#index"
     get "static_pages/index"
     get "ajax_products", to: "static_pages#load_products"
-    get "/cart", to: "carts#index"
+    get "/cart", to: "carts#index", as: "cart_index"
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
     resources :users, only: %i(new create show)
-    resources :products, only: :show
+    resources :products, only: %i(show)
+    resources :carts, only: %i(index create update destroy)
   end
 end

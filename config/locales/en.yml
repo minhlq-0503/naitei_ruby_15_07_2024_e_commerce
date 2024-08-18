@@ -14,6 +14,15 @@ en:
     index:
       title: "Home"
       featured_products: "Featured Products"
+  products:
+    show:
+      title: "Product"
+      product: "Product: %{name}"
+      category: "Category"
+      description: "Description"
+      stock: "Stock"
+      price: "Price"
+      add_to_cart: "Add to cart"
   sessions:
     new:
       title: "Log in"

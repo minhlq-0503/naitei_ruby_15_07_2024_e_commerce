@@ -1,0 +1,9 @@
+<div id="login-popup" class="modal" style="display: none;">
+  <div class="modal-content">
+    <p>You need to login to use this feature. Login now?</p>
+    <div class="modal-actions">
+      <button id="close-modal" class="btn btn-secondary">Maybe later</button>
+      <%= button_to "Login now", login_path, method: :get, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

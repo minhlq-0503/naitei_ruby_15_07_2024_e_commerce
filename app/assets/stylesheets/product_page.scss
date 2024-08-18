@@ -1,0 +1,61 @@
+@import 'color';
+
+.product-container {
+  padding: 20px;
+
+  .product-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    .product-image {
+      margin-right: 20px; // Add space between the image and the details
+
+      img {
+        max-width: 150px;
+        height: auto;
+      }
+    }
+
+    .product-details {
+      border: 1px solid $light-gray;
+      padding: 15px;
+      // flex-grow: 1; // Allow the details section to take up the remaining space
+      max-width: 50%;
+
+      h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .product-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .product-price {
+      color: red;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .add-to-cart {
+      background-color: white;
+      border: 1px solid black;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $dark-white;
+      }
+    }
+  }
+}

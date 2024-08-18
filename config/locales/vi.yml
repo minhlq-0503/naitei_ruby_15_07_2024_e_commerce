@@ -14,6 +14,15 @@ vi:
     index:
       title: "Trang chủ"
       featured_products: "Sản phẩm nổi bật"
+  products:
+    show:
+      title: "Sản phẩm"
+      product: "Sản phẩm: %{name}"
+      category: "Danh mục"
+      description: "Mô tả"
+      stock: "Số lượng trong kho"
+      price: "Giá"
+      add_to_cart: "Thêm vào giỏ hàng"
   sessions:
     new:
       title: "Đăng nhập"
