@@ -29,6 +29,7 @@ class User < ApplicationRecord
   has_many :feedbacks, dependent: :destroy
   has_many :orders, dependent: :nullify
   has_one_attached :image
+<<<<<<< HEAD
 
   def self.ransackable_attributes _auth_object = nil
     %w(
@@ -50,6 +51,8 @@ class User < ApplicationRecord
       orders
     )
   end
+=======
+>>>>>>> devise for login signup
 
   private
 
