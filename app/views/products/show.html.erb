@@ -38,5 +38,8 @@
       <% end %>
     </div>
   </div>
+  <div class="share-button">
+    <%= social_share_button_tag(@product.product_name, {:url => product_url(@product), :desc => @product.description}) %>
+  </div>
   <%= render partial: "reviews", locals: { feedbacks: @feedbacks } %>
 </div>

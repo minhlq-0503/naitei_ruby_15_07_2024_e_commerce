@@ -297,3 +297,8 @@ vi:
     comment: "Nhận xét"
     confirm_review: "Xác nhận gửi đánh giá?"
     image: "Ảnh sản phẩm"
+  social_share_button:
+    share_to: "Chia sẻ tới:"
+    twitter: "Twitter"
+    reddit: "Reddit"
+    email: "Email"
