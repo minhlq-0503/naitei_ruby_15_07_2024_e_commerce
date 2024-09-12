@@ -92,6 +92,9 @@ en:
     not_found_product: "Product not found!"
     no_stock: "Current product has no stock left!"
     add_to_cart_failed: "Cho sản phẩm vào giỏ hàng thát bại"
+    login_required: "Required logging in"
+    not_found_user: "User not found!"
+    deleted_user: "User has been deleted!"
   carts:
     cart_header:
       product: "Product"

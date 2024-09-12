@@ -6,6 +6,9 @@ class User < ApplicationRecord
                       password password_confirmation
                       remember_me).freeze
 
+  USER_PARAMS = %i(user_name email phone
+                      password password_confirmation).freeze
+
   enum role: {user: 0, admin: 1}, _prefix: true
   VALID_EMAIL_REGEX = Regexp.new(Settings.value.valid_email)
   VALID_PHONE_REGEX = Regexp.new(Settings.value.phone_format)
@@ -29,6 +32,8 @@ class User < ApplicationRecord
   has_many :feedbacks, dependent: :destroy
   has_many :orders, dependent: :nullify
   has_one_attached :image
+  scope :not_admin, ->{where.not role: 1}
+  # Ex:- scope :active, -> {where(:active => true)}
 
   def self.ransackable_attributes _auth_object = nil
     %w(

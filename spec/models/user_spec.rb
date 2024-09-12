@@ -1,5 +1,13 @@
 require "rails_helper"
 
+# SimpleCov.start do
+#   add_filter do |source_file|
+#     !source_file.filename.include?("app/models/user.rb")
+#   end
+# end
+
+SimpleCov.start
+
 RSpec.describe User, type: :model do
   describe "attribute validations" do
     describe "valid build" do

@@ -11,7 +11,7 @@ admin_user = User.create!(email: "admin@email.com",
             confirmed_at: DateTime.now)
 
 admin_user.image.attach(
-  io: URI.open("https://picsum.photos/200/200?random=1"),
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
   filename: "admin_avatar.jpg",
   content_type: "image/jpeg"
 )
@@ -29,7 +29,7 @@ users = 15.times.map do
   )
 
   user.image.attach(
-    io: URI.open("https://picsum.photos/200/200?random=1"),
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
     filename: "user_#{user.id}_image.jpg",
     content_type: "image/jpeg"
   )
@@ -63,7 +63,7 @@ end
   )
 
   category.image.attach(
-    io: URI.open("https://picsum.photos/200/200?random=1"),
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
     filename: "category_#{category.id}_image.jpg",
     content_type: "image/jpeg"
   )
@@ -82,7 +82,7 @@ end
   )
 
   product1.image.attach(
-    io: URI.open("https://picsum.photos/200/200?random=1"),
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
     filename: "product_#{product1.id}_image.jpg",
     content_type: "image/jpeg"
   )
@@ -99,7 +99,7 @@ end
   )
 
   product2.image.attach(
-    io: URI.open("https://picsum.photos/200/200?random=1"),
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
     filename: "product_#{product2.id}_image.jpg",
     content_type: "image/jpeg"
   )
@@ -117,7 +117,7 @@ end
   )
 
   product3.image.attach(
-    io: URI.open("https://picsum.photos/200/200?random=1"),
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
     filename: "product_#{product3.id}_image.jpg",
     content_type: "image/jpeg"
   )
@@ -135,7 +135,7 @@ end
   )
 
   product4.image.attach(
-    io: URI.open("https://picsum.photos/200/200?random=1"),
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
     filename: "product_#{product4.id}_image.jpg",
     content_type: "image/jpeg"
   )
@@ -153,7 +153,7 @@ end
   )
 
   product5.image.attach(
-    io: URI.open("https://picsum.photos/200/200?random=1"),
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
     filename: "product_#{product5.id}_image.jpg",
     content_type: "image/jpeg"
   )
@@ -219,7 +219,7 @@ products.each do |product|
     )
 
     feedback.image.attach(
-      io: URI.open("https://picsum.photos/200/200?random=1"),
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'logo.png')),
       filename: "feedback_#{feedback.id}_image.jpg",
       content_type: "image/jpeg"
     )

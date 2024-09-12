@@ -102,6 +102,9 @@ vi:
     not_found_product: "Không tìm thấy sản phẩm!"
     no_stock: "Sản phẩm hiện tại đang hết hàng"
     add_to_cart_failed: "Cho sản phẩm vào giỏ hàng thát bại"
+    login_required: "Bạn cần đăng nhập"
+    not_found_user: "Không tìm thấy người dùng"
+    deleted_user: "Người dùng đã bị xóa"
     feedbacks:
       already_exists: "Đã tồn tại"
       success: "Thành công"

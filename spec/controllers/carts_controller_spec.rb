@@ -1,5 +1,13 @@
 require "rails_helper"
 
+SimpleCov.start do
+  add_filter do |source_file|
+    !source_file.filename.include?("app/controllers/carts_controller.rb")
+  end
+end
+
+# SimpleCov.start
+
 RSpec.describe CartsController, type: :controller do
   let(:user) {create :user}
   let(:product) {create :product}
@@ -22,6 +30,21 @@ RSpec.describe CartsController, type: :controller do
   end
 
   describe "POST #create" do
+    context "when user not signed in" do
+      before do
+        sign_out user
+        post :create, params: {product_id: product.id}, format: :turbo_stream
+      end
+
+      it "show flash to login path" do
+        expect(flash[:error]).to eq(I18n.t("flash.login_required"))
+      end
+
+      it "redirect to login page" do
+        expect(response).to redirect_to(login_path)
+      end
+    end
+
     context "when product has stock" do
       before {post :create, params: {product_id: product.id}, format: :turbo_stream}
 
@@ -100,6 +123,27 @@ RSpec.describe CartsController, type: :controller do
       end
     end
   end
+
+  describe "PATCH #update_selection" do
+    let!(:cart_item) { create(:cart, user: user, product: product, quantity: 2) }
+
+    context "when updating selection" do
+      before do
+        sign_in user
+      end
+
+      it "responds to turbo_stream format" do
+        patch :update_selection, params: { id: cart_item.id, is_checked: "true" }, format: :turbo_stream
+        expect(response.media_type).to eq Mime[:turbo_stream].to_s
+      end
+
+      it "redirects to cart path when html format is requested" do
+        patch :update_selection, params: { id: cart_item.id, is_checked: "true" }, format: :html
+        expect(response).to redirect_to(carts_path)
+      end
+    end
+  end
+
 
   describe "DELETE #destroy" do
     before {delete :destroy, params: {id: cart.id}, format: :turbo_stream}

@@ -48,7 +48,7 @@ class CartsController < ApplicationController
   end
 
   def update_selection
-    find_cart_item_for_selection
+    find_cart_item
     handle_selection
 
     respond_to do |format|
@@ -122,10 +122,6 @@ class CartsController < ApplicationController
     @cart = current_user.carts.find_by id: params[:id]
   end
 
-  def find_cart_item_for_selection
-    @cart = current_user.carts.find_by id: params[:cart_id]
-  end
-
   def process_cart_update action_type
     case action_type.to_sym
     when :increment
@@ -174,7 +170,7 @@ class CartsController < ApplicationController
   def logged_in_user
     return if user_signed_in?
 
-    flash[:warning] = t ".login_required"
+    flash[:error] = t "flash.login_required"
     redirect_to login_path
   end
 end
