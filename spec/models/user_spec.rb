@@ -1,4 +1,5 @@
 require "rails_helper"
+SimpleCov.start
 
 RSpec.describe User, type: :model do
   describe "attribute validations" do
